@@ -76,5 +76,16 @@ Once the stack has been deployed, all new users will be forced to use MFA authen
 
 Firstly, Update `helpers/mappings.py` and update `self.AWSDevAccountId` with your account ID. Next, update `Route53PublicZone` with the ID of the zone you created before.
 
+You will need to define your subnets for the stack, see below for some sane defaults:
 
-
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| VPCCIDR | `10.2.0.0/16` | CIDR block for the VPC /16 range |
+| GeneralPrivateSubnetACIDR | `10.2.0.0/21` | A /21 CIDR block for the general-private-a subnet |
+| GeneralPrivateSubnetBCIDR | `10.2.8.0/21` | A /21 CIDR block for the general-private-b subnet |
+| SharedServicesPrivateSubnetACIDR | `10.2.16.0/21` | A /21 CIDR block for the shared-private-a subnet |
+| SharedServicesPrivateSubnetBCIDR | `10.2.24.0/21` | A /21 CIDR block for the shared-private-b subnet |
+| SharedServicesPublicSubnetACIDR | `10.2.32.0/21` | A /21 CIDR block for the shared-public-a subnet |
+| SharedServicesPublicSubnetBCIDR | `10.2.40.0/21` | A /21 CIDR block for the shared-public-b subnet |
+| LBSubnetACIDR | `10.2.48.0/21` | A /21 CIDR block for the web-public-a subnet |
+| LBSubnetBCIDR | `10.2.56.0/21` | A /21 CIDR block for the web-public-b subnet |
