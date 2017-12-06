@@ -51,5 +51,6 @@ class Users(MagicDict):
         self.EC2BaselineProfile = iam.InstanceProfile(
             "EC2BaselineProfile",
             Path="/",
-            Roles=[Ref(roles.EC2Baseline)]
+            Roles=[Ref(roles.EC2Baseline)],
+            InstanceProfileName="EC2BaselineProfile"
         )
